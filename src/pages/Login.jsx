@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -47,11 +48,12 @@ const Button = styled.button`
     margin-bottom: 10px;
 `;
 
-const Link = styled.a`
+const Link1 = styled.a`
     margin: 5px 0px;
     font-size: 12px;
     text-decoration: underline;
     cursor: pointer;
+    color: black;
 `;
 
 const Login = () => {
@@ -63,8 +65,11 @@ const Login = () => {
                     <Input placeholder='Username'/>
                     <Input placeholder='Password'/>
                     <Button>LOG IN</Button>
-                    <Link>DON'T REMEMBER YOUR PASSWORD?</Link>
-                    <Link>CREATE A NEW ACCOUNT</Link>
+                    <Link1>DON'T REMEMBER YOUR PASSWORD?</Link1>
+                    <Link1>CREATE A NEW ACCOUNT</Link1>
+                    <Link to='/'>
+                        <Link1>GO BACK TO HOME</Link1>
+                    </Link>
                 </Form>
             </Wrapper>
         </Container>

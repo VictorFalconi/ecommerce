@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -42,6 +43,14 @@ const Agreement = styled.span`
     margin: 20px 0px;
 `;
 
+const Link1 = styled.a`
+    margin: 5px 0px;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+`;
+
 const Button = styled.button`
     width: 40%;
     border: none;
@@ -68,6 +77,9 @@ const Register = () => {
                         my personal data in accordance to the <b>PRIVACY POLICY</b>
                     </Agreement>
                     <Button>CREATE</Button>
+                    <Link to='/' style={{marginRight: '400px', marginTop: '10px'}}>
+                        <Link1>GO BACK TO HOME</Link1>
+                    </Link>
                 </Form>
             </Wrapper>
         </Container>

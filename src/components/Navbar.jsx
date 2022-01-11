@@ -4,6 +4,7 @@ import {Search} from '@material-ui/icons';
 import {ShoppingCartOutlined} from '@material-ui/icons';
 import {Badge} from '@material-ui/core';
 import {mobile} from '../responsive';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     height: 60px;
@@ -51,6 +52,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
     font-weight: bold;
+    color: black;
     ${mobile({fontSize: "24px", marginLeft: '15px'})}
 `;
 
@@ -66,6 +68,7 @@ const MenuItem = styled.div`
     font-size: 14px;
     cursor: pointer;
     margin-left: 25px;
+    color: black;
     ${mobile({fontSize: "12px", marginLeft: "10px"})}
 `;
 
@@ -80,15 +83,25 @@ const Navbar = () => {
                         <Search style={{color: 'gray', fontSize: '16px'}}/>
                     </SearchContainer>
                 </Left>
-                <Center><Logo>VICATH.</Logo></Center>
+                <Center>
+                    <Link to='/' style={{textDecoration: 'none'}}>
+                        <Logo>VICATH.</Logo>
+                    </Link>
+                </Center>
                 <Right>
-                    <MenuItem>REGISTER</MenuItem>
-                    <MenuItem>SIGN IN</MenuItem>
-                    <MenuItem>
-                        <Badge badgeContent={4} color="primary">
-                            <ShoppingCartOutlined />
-                        </Badge>
-                    </MenuItem>
+                    <Link to='/register' style={{textDecoration: 'none'}}>
+                        <MenuItem>REGISTER</MenuItem>
+                    </Link>
+                    <Link to='/login' style={{textDecoration: 'none'}}>
+                        <MenuItem>SIGN IN</MenuItem>
+                    </Link>
+                    <Link to='/cart' style={{textDecoration: 'none'}}>
+                        <MenuItem>
+                            <Badge badgeContent={4} color="primary">
+                                <ShoppingCartOutlined />
+                            </Badge>
+                        </MenuItem>
+                    </Link>
                 </Right>
             </Wrapper>
         </Container>

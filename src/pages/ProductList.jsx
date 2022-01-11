@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
@@ -40,6 +40,10 @@ const Option = styled.option`
 `;
 
 const ProductList = () => {
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, []);
+    
     return (
         <Container>
             <Navbar/>
